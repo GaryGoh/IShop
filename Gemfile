@@ -62,6 +62,13 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
 
+group :production do
+  gem 'mysql2', '~> 0.5.2'
+
+  # This gem will configure your application to serve static assets so that you do not need to do this manually in a config file.
+  gem 'rails_12factor'
+end
+
 group :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '>= 2.15'
