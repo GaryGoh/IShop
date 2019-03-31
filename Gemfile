@@ -63,7 +63,11 @@ group :development do
 end
 
 group :production do
-  gem 'mysql2', '~> 0.5.2'
+  # non-heroku used
+  # gem 'mysql2', '~> 0.5.2'
+
+  # heroku used
+  gem 'pg', '~> 0.18.4'
 
   # This gem will configure your application to serve static assets so that you do not need to do this manually in a config file.
   gem 'rails_12factor'

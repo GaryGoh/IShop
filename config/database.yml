@@ -18,6 +18,13 @@ default: &mysql
   host: localhost
   socket: /tmp/mysql.sock
 
+default: &postgresql
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  username: root
+  password: root
+
 development:
   <<: *default
   database: db/development.sqlite3
@@ -30,5 +37,5 @@ test:
   database: db/test.sqlite3
 
 production:
-  <<: *default
+  <<: *postgresql
   database: db/ishopping
